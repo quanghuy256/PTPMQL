@@ -1,4 +1,4 @@
-@model IEnumerable<MvcMovie.Models.Person>
+@model IEnumerable<MvcMovie.Models.Employee>
 
 @{
     ViewData["Title"] = "Index";
@@ -12,6 +12,12 @@
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmployeeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.FullName)
             </th>
@@ -28,6 +34,12 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.FullName)
             </td>
             <td>
@@ -38,6 +50,7 @@
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.PersonId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PersonId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.PersonId">Delete</a>
             </td>
         </tr>

@@ -10,8 +10,8 @@ using MvcMovie.Data;
 namespace MvcMovie.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250321134146_Create_table_Person")]
-    partial class Create_table_Person
+    [Migration("20250322071354_UpdateSchema")]
+    partial class UpdateSchema
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -29,6 +29,10 @@ namespace MvcMovie.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Gmail")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

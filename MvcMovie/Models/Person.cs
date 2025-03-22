@@ -3,16 +3,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcMovie.Models
 {
-    [Table("Persons")]  // Đặt tên bảng trong CSDL
+    [Table("Persons")]
     public class Person
     {
-        [Key]  // Đánh dấu PersonId là khóa chính
+        [Key]
         public string PersonId { get; set; }
-
-        [Required]  // Thuộc tính bắt buộc nhập
         public string FullName { get; set; }
-
-        [Required]
         public string Address { get; set; }
+        public string Gmail { get; set; } // Thêm thuộc tính Gmail
     }
 }
